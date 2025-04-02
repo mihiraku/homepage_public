@@ -1,2 +1,6 @@
 [Develop]
 	npx @tailwindcss/cli -i ./src/input.css -o ./docs/style/main.css --watch
+
+[History]
+	TailwindCLI
+		https://tailwindcss.com/docs/installation/tailwind-cli
