@@ -1,0 +1,24 @@
+devDependencies
+  jest	                          [Test] テストフレームワーク。
+  jest-environment-jsdom          [Test] ブラウザ環境をエミュレートする。
+  identity-obj-proxy              [Test] CSSをモック化する。
+  @testing-library/jest-dom       [Test] DOMのテストをしやすくする（例：toBeInTheDocument）。
+  @testing-library/react          [Test] Reactコンポーネントをテストするためのライブラリ。
+  @babel/core                     [Convert] 最新JavaScriptを古いブラウザ向けに変換する。
+  @babel/preset-env               [Convert] 変換処理のセット。
+  @babel/preset-react             [Convert] JSXをJavaScriptに変換する。
+  babel-jest                      [Convert] Babelを使ってJestでESモジュールやJSXをテストできるようにする。
+  webpack                         [Pack] ファイルをまとめる
+  webpack-cli                     [Pack] コマンドラインで操作できるようにする。
+  webpack-dev-server              [Pack] 開発用ローカルサーバー。
+  html-webpack-plugin             [Pack] HTML ファイルを自動生成するプラグイン。
+  babel-loader                    [Pack] WebpackでBabelを使えるようにするローダー。
+  css-loader                      [Pack] CSSをJavaScript内でimportできるようにするWebpackローダー。
+  style-loader                    [Pack] CSSを<style>タグとしてHTMLに注入するWebpackローダー。
+  dotenv                          .envファイルから環境変数を読み込むためのライブラリ。
+dependencies
+  react                           [React] UIを効率よく作るためのJavaScriptライブラリ。
+  react-dom                       [React] UIをDOMに描画するためのライブラリ。
+  motion                          [React] アニメーションライブラリ。
+  use-immer                       [React] 深い変更を検知して再描画させるライブラリ
+  react-zoom-pan-pinch            [React] 画像・要素をズームできるようにするライブラリ。

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>みひらくすとあ</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/welcome.css">
+  <script defer src="main.bundle.js"></script></head>
+  <body>
+
+    <header>
+      <button id="open-sidebar-btn" class="header-item open-sidebar-btn">☰</button>
+      <h1 class="header-item">みひらくすとあ</h1>
+    </header>
+    
+    <div class="layout">
+      <aside id="sidebar" class="sidebar">
+        <button id="close-sidebar-btn" class="close-sidebar-btn">❌</button>
+        <nav class="sidebar-nav">
+          <a href="#welcome" class="sidebar-item">ようこそ</a>
+          <a href="#profile" class="sidebar-item">プロフィール</a>
+          <a href="#koshihikari" class="sidebar-item">🌾 コシヒカリ</a>
+        </nav>
+      </aside>
+      <main class="content">
+
+        <section id="welcome" class="content-page"></section>
+        <section id="profile" class="content-page"></section>
+        <section id="koshihikari" class="content-page"></section>
+      </main>
+    </div>
+    
+    <footer>
+      <div class="footer-item">&copy; Mihiraku</div>
+    </footer>
+    
+  </body>
+</html>

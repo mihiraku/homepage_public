@@ -1,0 +1,27 @@
+html, body {
+  /* margin: 0;
+  padding: 0; */
+  touch-action: none;               /* ピンチ・ドラッグ操作を無効 */
+  overflow: hidden;                 /* スクロール禁止 */
+  user-select: none;                /* テキスト選択禁止（標準プロパティ） */
+  -webkit-user-select: none;        /* テキスト選択禁止 */
+  -webkit-touch-callout: none;      /* 長押しメニュー禁止 */
+}
+
+.container {
+  text-align: center;
+  margin-top: 50px;
+  font-family: sans-serif;
+}
+  
+.button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+}
+  
+.input {
+  padding: 8px;
+  font-size: 16px;
+}

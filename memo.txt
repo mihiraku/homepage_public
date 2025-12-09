@@ -1,0 +1,9 @@
+Develop
+	Command
+		npm run test:unit-watch
+		npm run start
+		npm run build
+
+task
+	□ 理解・整理
+	□ document.elementFromPoint(x, y)
