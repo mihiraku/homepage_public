@@ -1,0 +1,11 @@
+.page_wakegaku {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.page_wakegaku>.slide {
+  margin-bottom: 20px;
+  max-height: calc(100dvh - 150px);
+}

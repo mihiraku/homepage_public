@@ -2,7 +2,7 @@
 // import "./css/welcome.css";
 
 // コンテンツページのHTMLを読み込む
-for (const key of ['welcome', 'profile', 'koshihikari']) {
+for (const key of ['welcome', 'profile', 'wakegaku']) {
   fetch(`page/${key}.html`)
   .then(res => res.text())
   .then(html => {
