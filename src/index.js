@@ -5,9 +5,12 @@
 for (const key of ['welcome', 'profile', 'koshihikari']) {
   fetch(`page/${key}.html`)
   .then(res => res.text())
-  .then(data => {
+  .then(html => {
     const target = document.querySelector(`#${key}`);
-    target.innerHTML = data;
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
+    const bodyContent = doc.body.innerHTML;
+    target.innerHTML = bodyContent;
   });
 }
 
