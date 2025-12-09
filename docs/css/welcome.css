@@ -1,0 +1,39 @@
+.page_welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+/* ▼ 全体のラップ（relative） */
+.bubble-wrap {
+  display: inline-flex;
+  flex-direction: column; /* 上:本体 → 下:アロー */
+  align-items: flex-start; /* 横位置調整 */
+  margin: 20px;
+}
+
+/* ▼ 吹き出し本体 */
+.bubble-text {
+  position: relative;
+  background: white;
+  padding: 12px 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.2);
+  max-width: 200px;
+}
+
+/* ▼ アロー（三角形） */
+.bubble-arrow {
+  position: relative;
+  width: 0;
+  height: 0;
+  margin-top: -2px; /* 少し重ねて接続 */
+  
+  /* 下向きの三角形 */
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid white;
+  margin-left: 25px; /* 横位置調整 */
+}

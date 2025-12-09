@@ -36,7 +36,7 @@ module.exports = {
     // 出力フォルダを毎回クリーンアップ
     clean: {
       // フォルダを削除対象から除外する
-      keep: /(page|image|svg)\/.*/,
+      keep: /(page|css|image|svg)\/.*/,
     },
   },
 
