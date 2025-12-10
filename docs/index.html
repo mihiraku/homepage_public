@@ -4,36 +4,53 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>みひらくすとあ</title>
+    <link rel="stylesheet" href="css/fontawesome.all.min.css">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/welcome.css">
+    <link rel="stylesheet" href="./css/profile.css">
+    <link rel="stylesheet" href="./css/nagasamai.css">
     <link rel="stylesheet" href="./css/wakegaku.css">
+    <link rel="stylesheet" href="./css/cocorefix.css">
+    <link rel="stylesheet" href="./css/minecraft.css">
   <script defer src="main.bundle.js"></script></head>
   <body>
 
     <header>
-      <button id="open-sidebar-btn" class="header-item open-sidebar-btn">☰</button>
-      <h1 class="header-item">みひらくすとあ</h1>
+      <button id="btn_open-menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <h1 id="page-title">みひらくすとあ</h1>
     </header>
     
-    <div class="layout">
-      <aside id="sidebar" class="sidebar">
-        <button id="close-sidebar-btn" class="close-sidebar-btn">❌</button>
-        <nav class="sidebar-nav">
-          <a href="#welcome" class="sidebar-item">ようこそ</a>
-          <a href="#profile" class="sidebar-item">プロフィール</a>
-          <a href="#wakegaku" class="sidebar-item">分学</a>
+    <div id="top-layout">
+
+      <aside id="menubar">
+        <button id="btn_close-menubar">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <nav id="menus">
+          <a class="menu" href="#welcome"><i class="fa-solid fa-heart"></i> ようこそ</a>
+          <a class="menu" href="#profile"><i class="fa-solid fa-house-laptop"></i> プロフィール</a>
+          <a class="menu" href="#nagasamai"><i class="fa-solid fa-bowl-rice"></i> ご飯（コシヒカリ）</a>
+          <a class="menu" href="#wakegaku"><i class="fa-solid fa-arrows-split-up-and-left fa-flip-horizontal"></i> 分覚（わけかく）</a>
+          <a class="menu" href="#cocorefix"><i class="fa-solid fa-border-all"></i> CoCoRefix</a>
+          <a class="menu" href="#minecraft"><i class="fa-solid fa-earth-americas"></i> マイクラワールド</a>
         </nav>
       </aside>
-      <main class="content">
 
-        <section id="welcome" class="content-page"></section>
-        <section id="profile" class="content-page"></section>
-        <section id="wakegaku" class="content-page"></section>
+      <main id="content-area">
+        <div class="content-wrapper" id="welcome"></div>
+        <div class="content-wrapper" id="profile"></div>
+        <div class="content-wrapper" id="nagasamai"></div>
+        <div class="content-wrapper" id="wakegaku"></div>
+        <div class="content-wrapper" id="cocorefix"></div>
+        <div class="content-wrapper" id="minecraft"></div>
       </main>
+
     </div>
     
     <footer>
-      <div class="footer-item">&copy; Mihiraku</div>
+      <div>&copy; mihiraku</div>
     </footer>
     
   </body>
