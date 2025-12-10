@@ -1,8 +1,14 @@
 // import "./css/index.css";
 // import "./css/welcome.css";
 
+// document.addEventListener('DOMContentLoaded', () => {
+//   console.log('DOM Loaded!');
+//   // ここに実行したい処理を書く
+// });
+
+
 // コンテンツページのHTMLを読み込む
-for (const key of ['welcome', 'profile', 'wakegaku']) {
+for (const key of ['welcome', 'profile', 'nagasamai', 'wakegaku', 'cocorefix', 'minecraft']) {
   fetch(`page/${key}.html`)
   .then(res => res.text())
   .then(html => {
@@ -20,30 +26,30 @@ if (!window.location.hash) {
 }
 
 // サイドバー開閉処理
-const sidebar = document.getElementById("sidebar");
-const openSidebarBtn = document.getElementById("open-sidebar-btn");
-const closeSidebarBtn = document.getElementById("close-sidebar-btn");
-openSidebarBtn.addEventListener("click", () => {
-  sidebar.classList.toggle("open");
+const menu = document.getElementById("menubar");
+const openMenuBtn = document.getElementById("btn_open-menu");
+const closeMenuBtn = document.getElementById("btn_close-menubar");
+openMenuBtn.addEventListener("click", () => {
+  menu.classList.toggle("open");
 });
-closeSidebarBtn.addEventListener("click", () => {
-  sidebar.classList.remove("open");
+closeMenuBtn.addEventListener("click", () => {
+  menu.classList.remove("open");
 });
 window.addEventListener('hashchange', () => {
-  const sidebar = document.getElementById("sidebar");
-  sidebar.classList.remove("open");
+  const menu = document.getElementById("menubar");
+  menu.classList.remove("open");
 });
 
 // サイドバーのフォーカス処理
-function refreshSidebarItems() {
-  const items = document.querySelectorAll('.sidebar-item.active');
+function refreshMenuItems() {
+  const items = document.querySelectorAll('.menu.active');
   items.forEach(active => active.classList.remove('active'));
-  const target = document.querySelector(`a[href="${window.location.hash}"].sidebar-item`);
+  const target = document.querySelector(`a[href="${window.location.hash}"].menu`);
   if (target) target.classList.add('active');
 }
 window.addEventListener('hashchange', () => {
-  refreshSidebarItems();
+  refreshMenuItems();
 });
 
 // 初期処理
-refreshSidebarItems();
+refreshMenuItems();

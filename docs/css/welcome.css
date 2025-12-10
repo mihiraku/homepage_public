@@ -1,31 +1,31 @@
-.page_welcome {
+#content_welcome {
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100%;
 }
 
-/* ▼ 全体のラップ（relative） */
-.bubble-wrap {
+#content_welcome .spacer {
+  flex: 1;
+}
+
+#content_welcome .bubble {
   display: inline-flex;
-  flex-direction: column; /* 上:本体 → 下:アロー */
-  align-items: flex-start; /* 横位置調整 */
+  flex-direction: column;
+  align-items: flex-start;
   margin: 20px;
 }
 
-/* ▼ 吹き出し本体 */
-.bubble-text {
+#content_welcome .bubble-text {
   position: relative;
   background: white;
-  padding: 12px 15px;
+  padding: 15px 15px;
   border-radius: 10px;
   box-shadow: 0 4px 18px rgba(0,0,0,0.2);
-  max-width: 200px;
+  max-width: 250px;
 }
 
-/* ▼ アロー（三角形） */
-.bubble-arrow {
+#content_welcome .bubble-arrow {
   position: relative;
   width: 0;
   height: 0;

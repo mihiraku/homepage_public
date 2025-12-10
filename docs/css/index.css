@@ -11,27 +11,27 @@ body {
   flex-direction: column;
 }
 
-h1 {
-	margin: 15px;
-}
 header {
-  background: #333;
-  color: #fff;
   display: flex;
   align-items: center;
+  height: 70px;
+  background: #333;
+  color: #fff;
 }
-.header-item:nth-child(2) {
+header > #page-title {
 	flex: 1;
+	margin: 0;
 	text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
 }
-.header-item.open-sidebar-btn {
+header > #btn_open-menu {
+  margin: 10px;
   cursor: pointer;
   font-size: 24px;
-  background: none;
   border: none;
   color: white;
-  margin: 10px;
-  display: none;
+  background: none;
 }
 
 footer {
@@ -41,93 +41,108 @@ footer {
   align-items: center;
 	justify-content: center;
 }
-.footer-item {
-  color: #fff;
-	text-align: center;
+footer > * {
 	margin: 0 10px;
+	text-align: center;
 	text-decoration: none;
+  color: #fff;
 }
 
-.layout {
-  flex: 1;                /* 余白をすべてもらう */
+#top-layout {
+  flex: 1;
   display: flex;
-  overflow: hidden;       /* スクロールさせる */
+  overflow: hidden;
 }
 
-.sidebar {
+#menubar {
   z-index: 1;
-  width: 200px;
+  top: 0;
+  width: 250px;
+  overflow-y: auto;
   background: #f0f0f0;
-  overflow-y: auto;       /* サイドバー自体にスクロールもOK */
-  position: relative;      /* ← closeボタンを配置する用 */
 }
-
-.close-sidebar-btn {
+#menubar > #btn_close-menubar {
   position: absolute;
   top: 10px;
   right: 10px;
   font-size: 20px;
-  background: none;
-  border: none;
   cursor: pointer;
-  display: none;           /* PCでは非表示 */
+  border: none;
+  background: none;
+}
+#menubar > #menus {
+  background: #f8f9fa;
+}
+#menubar > #menus > .menu {
+  display: block;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-left: 8px solid transparent;
+  font-size: 15px;
+  transition: background 0.2s, padding-left 0.2s;
+  color: #333;
+}
+#menubar > #menus > .menu:hover {
+  background: #e9ecef;
+}
+@media (hover: hover) and (pointer: fine) {
+  #menubar > #menus > .menu:hover {
+    padding-left: 26px;
+  }
+}
+#menubar > #menus > .menu.active {
+  background: #dee2e6;
+  font-weight: bold;
+  border-left: 8px solid #0d6efd;
 }
 
 @media (max-width: 768px) {
-	.header-item.open-sidebar-btn {
+	header > #btn_open-menu {
     display: inline-block;
   }
-  .close-sidebar-btn {
-    display: block;        /* スマホ時は表示 */
-  }
-  .sidebar {
+  #menubar {
     position: fixed;
-    top: 0;
-    left: -200px;
-    height: 100%;
-    padding-top: 40px;     /* ボタンと重ならないよう余白 */
+    left: -250px;
+    height: 100dvh;
+  }
+  #menubar > #btn_close-menubar {
+    display: block;
+  }
+  #menubar > #menus {
+    margin-top: 40px;
+  }
+  #menubar.open {
+    left: 0;
     transition: left 0.3s;
   }
-  .sidebar.open {
+}
+@media (min-width: 768px) {
+	header > #btn_open-menu {
+    display: none;
+  }
+  #menubar {
+    position: relative;
     left: 0;
+    padding-top: 0;
+    transition: none;
+  }
+  #menubar > #btn_close-menubar {
+    display: none;
+  }
+  #menubar > #menus {
+    margin-top: 0;
   }
 }
 
-.sidebar-nav {
-  background: #f8f9fa;
-}
-.sidebar-item {
-  display: block;
-  padding: 12px 20px;
-  color: #333;
-  text-decoration: none;
-  font-size: 15px;
-  transition: background 0.2s, padding-left 0.2s;
-  border-left: 8px solid transparent;
-}
-.sidebar-item:hover {
-  background: #e9ecef;
-  padding-left: 26px; /* ちょっと動かすとオシャレ */
-}
-.sidebar-item.active {
-  background: #dee2e6;
-  font-weight: bold;
-  border-left: 8px solid #0d6efd; /* アクセントカラー */
-}
-
-.content {
+#content-area {
   flex: 1;
   padding: 0;
-  display: flex;
-  flex-direction: column;
 }
-.content-page {
+#content-area > .content-wrapper {
   display: none;
-	flex: 1;
+  height: 100%;
   overflow-y: auto;
-  padding: 20px;
 }
-/* 選ばれたページだけ表示 */
-:target {
+#content-area > .content-wrapper:target {
   display: block;
 }
