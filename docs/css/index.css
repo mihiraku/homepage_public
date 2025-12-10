@@ -26,7 +26,9 @@ header > #page-title {
   overflow: hidden;
 }
 header > #btn_open-menu {
-  margin: 10px;
+  margin: 0;
+  width: 70px;
+  height: 70px;
   cursor: pointer;
   font-size: 24px;
   border: none;
@@ -63,8 +65,11 @@ footer > * {
 }
 #menubar > #btn_close-menubar {
   position: absolute;
-  top: 10px;
+  top: 0;
   right: 10px;
+  margin: 0;
+  width: 40px;
+  height: 40px;
   font-size: 20px;
   cursor: pointer;
   border: none;
