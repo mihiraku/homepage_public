@@ -18,12 +18,19 @@ header {
   background: #333;
   color: #fff;
 }
-header > #page-title {
+header > #titles {
 	flex: 1;
+  padding-right: 70px;
+  overflow: hidden;
+}
+header > #titles > .title {
 	margin: 0;
 	text-align: center;
   white-space: nowrap;
-  overflow: hidden;
+  display: none;
+}
+header > #titles > .title.active {
+  display: block;
 }
 header > #btn_open-menu {
   margin: 0;
@@ -101,6 +108,19 @@ footer > * {
   border-left: 8px solid #0d6efd;
 }
 
+#content-area {
+  flex: 1;
+  padding: 0;
+}
+#content-area > .content-wrapper {
+  display: none;
+  height: 100%;
+  overflow-y: auto;
+}
+#content-area > .content-wrapper:target {
+  display: block;
+}
+
 @media (max-width: 768px) {
 	header > #btn_open-menu {
     display: inline-block;
@@ -137,17 +157,4 @@ footer > * {
   #menubar > #menus {
     margin-top: 0;
   }
-}
-
-#content-area {
-  flex: 1;
-  padding: 0;
-}
-#content-area > .content-wrapper {
-  display: none;
-  height: 100%;
-  overflow-y: auto;
-}
-#content-area > .content-wrapper:target {
-  display: block;
 }
