@@ -1,7 +1,8 @@
-html {
-  overflow: hidden;
-}
 body {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100dvh;
   margin: 0;
   font-family:
     "Noto Sans JP",
@@ -9,52 +10,53 @@ body {
     "Yu Gothic",
     "Meiryo",
     sans-serif;
-  height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
 }
 
 header {
   display: flex;
   align-items: center;
-  height: 70px;
+  overflow: hidden;
+  height: 4.3rem;
   background: #333;
   color: #fff;
 }
 header > #titles {
 	flex: 1;
-  padding-right: 65px;
+  padding-right: 4.3rem;
 }
 header > #titles > .title {
+  display: none;
 	margin: 0;
 	text-align: center;
   white-space: nowrap;
-  display: none;
 }
 header > #btn_open-menu {
-  margin: 0;
-  min-width: 70px;
-  height: 70px;
+  min-width: 4.3rem;
+  min-height: 4.3rem;
+  padding: 0;
+  padding-top: 0.3rem;
+  font-size: 1.8rem;
   cursor: pointer;
-  font-size: 24px;
   border: none;
   color: white;
   background: none;
 }
 
 footer {
-  /* padding: 5px; */
   display: flex;
-  align-items: center;
 	justify-content: center;
-  height: 30px;
+  align-items: center;
   overflow: hidden;
-  white-space: nowrap;
+  height: 1.7rem;
   background: #333;
+  white-space: nowrap;
 }
 footer > * {
-	margin: 0 10px;
+	margin: 0 0.5rem;
 	text-align: center;
 	text-decoration: none;
   color: #fff;
@@ -69,7 +71,6 @@ footer > * {
 #menubar {
   z-index: 1;
   top: 0;
-  /* width: 250px; */
   overflow-y: auto;
   background: #f0f0f0;
   transition: left 0.3s;
@@ -77,11 +78,12 @@ footer > * {
 #menubar > #btn_close-menubar {
   position: absolute;
   top: 0;
-  right: 10px;
-  margin: 0;
-  width: 40px;
-  height: 40px;
-  font-size: 20px;
+  right: 0;
+  padding: 0;
+  padding-top: 0.3rem;
+  width: 4.3rem;
+  height: 4.3rem;
+  font-size: 1.5rem;
   cursor: pointer;
   border: none;
   background: none;
@@ -91,19 +93,20 @@ footer > * {
 }
 #menubar .menu {
   display: flex;
+  overflow: hidden;
 }
 #menubar .menu-prefix {
   visibility: hidden;
   background: #dee2e6;
   font-weight: bold;
-  border-left: 8px solid #0d6efd;
+  border-left: 0.7rem solid #0d6efd;
 }
 #menubar .menu-text {
   flex: 1;
   display: block;
-  padding: 12px 20px;
+  padding: 0.8rem 1.5rem;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 1rem;
   transition: background 0.2s, padding-left 0.2s;
   color: #333;
 }
@@ -116,7 +119,7 @@ footer > * {
   flex: 1;
   padding: 0;
 }
-#content-area > .content-wrapper {
+#content-area .content-wrapper {
   display: none;
   height: 100%;
   overflow-y: auto;
@@ -148,14 +151,14 @@ body:has(#minecraft:target) .menu-text.minecraft { font-weight: bold; background
 
 /* 画面のサイズによって見た目を切り替える */
 @media (max-width: 768px) {
-	#btn_open-menu { display: block; }
+	#btn_open-menu { visibility: visible; }
   #btn_close-menubar { display: block; }
-  #menubar { position: fixed; left: -300px; height: 100dvh; }
-  #menus { margin-top: 40px; }
+  #menubar { position: fixed; left: -30rem; height: 100dvh; }
+  #menus { margin-top: 4.3rem; }
   #menubar.open { left: 0; }
 }
 @media (min-width: 768px) {
-	#btn_open-menu { display: none; }
+	#btn_open-menu { visibility: hidden; }
   #btn_close-menubar { display: none; }
   #menubar { position: relative; left: 0; }
   #menus { margin-top: 0; }

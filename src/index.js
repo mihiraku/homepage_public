@@ -14,8 +14,10 @@ function loadHtml() {
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, 'text/html');
         const bodyContent = doc.body.innerHTML;
-        loadMarker.parentNode.innerHTML = bodyContent;
-        console.log(`loaded: ${pageUrl}`);
+        if (loadMarker.parentNode) {
+          loadMarker.parentNode.innerHTML = bodyContent;
+          console.log(`loaded: ${pageUrl}`);
+        }
       });
     }
   }
