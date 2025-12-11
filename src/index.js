@@ -41,28 +41,28 @@ window.addEventListener('hashchange', () => {
 });
 
 // サイドバーのフォーカス処理
-function refreshMenuItems() {
-  const items = document.querySelectorAll('.menu.active');
-  items.forEach(active => active.classList.remove('active'));
-  const target = document.querySelector(`a[href="${window.location.hash}"].menu`);
-  if (target) target.classList.add('active');
-}
-window.addEventListener('hashchange', () => {
-  refreshMenuItems();
-});
+// function refreshMenuItems() {
+//   const items = document.querySelectorAll('.menu.active');
+//   items.forEach(active => active.classList.remove('active'));
+//   const target = document.querySelector(`a[href="${window.location.hash}"].menu`);
+//   if (target) target.classList.add('active');
+// }
+// window.addEventListener('hashchange', () => {
+//   refreshMenuItems();
+// });
 
 // タイトルを更新する
-function refreshTitles() {
-  const items = document.querySelectorAll('.title.active');
-  items.forEach(item => item.classList.remove('active'));
-  const hash = window.location.hash.replace(/^#/,'');
-  const target = document.querySelector(`.title.${hash}`);
-  if (target) target.classList.add('active');
-}
-window.addEventListener('hashchange', () => {
-  refreshTitles();
-});
+// function refreshTitles() {
+//   const items = document.querySelectorAll('.title.active');
+//   items.forEach(item => item.classList.remove('active'));
+//   const hash = window.location.hash.replace(/^#/,'');
+//   const target = document.querySelector(`.title.${hash}`);
+//   if (target) target.classList.add('active');
+// }
+// window.addEventListener('hashchange', () => {
+//   refreshTitles();
+// });
 
 // 初期処理
-refreshMenuItems();
-refreshTitles();
+// refreshMenuItems();
+// refreshTitles();

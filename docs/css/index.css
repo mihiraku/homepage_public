@@ -1,3 +1,6 @@
+html {
+  overflow: hidden;
+}
 body {
   margin: 0;
   font-family:
@@ -9,6 +12,7 @@ body {
   height: 100dvh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 header {
@@ -21,16 +25,12 @@ header {
 header > #titles {
 	flex: 1;
   padding-right: 70px;
-  overflow: hidden;
 }
 header > #titles > .title {
 	margin: 0;
 	text-align: center;
   white-space: nowrap;
   display: none;
-}
-header > #titles > .title.active {
-  display: block;
 }
 header > #btn_open-menu {
   margin: 0;
@@ -49,6 +49,8 @@ footer {
   display: flex;
   align-items: center;
 	justify-content: center;
+  overflow: hidden;
+  white-space: nowrap;
 }
 footer > * {
 	margin: 0 10px;
@@ -66,9 +68,10 @@ footer > * {
 #menubar {
   z-index: 1;
   top: 0;
-  width: 250px;
+  /* width: 250px; */
   overflow-y: auto;
   background: #f0f0f0;
+  transition: left 0.3s;
 }
 #menubar > #btn_close-menubar {
   position: absolute;
@@ -82,30 +85,30 @@ footer > * {
   border: none;
   background: none;
 }
-#menubar > #menus {
+#menubar #menus {
   background: #f8f9fa;
 }
-#menubar > #menus > .menu {
+#menubar .menu {
+  display: flex;
+}
+#menubar .menu-prefix {
+  visibility: hidden;
+  background: #dee2e6;
+  font-weight: bold;
+  border-left: 8px solid #0d6efd;
+}
+#menubar .menu-text {
+  flex: 1;
   display: block;
   padding: 12px 20px;
   text-decoration: none;
-  border-left: 8px solid transparent;
   font-size: 15px;
   transition: background 0.2s, padding-left 0.2s;
   color: #333;
 }
-#menubar > #menus > .menu:hover {
-  background: #e9ecef;
-}
-@media (hover: hover) and (pointer: fine) {
-  #menubar > #menus > .menu:hover {
-    padding-left: 26px;
-  }
-}
-#menubar > #menus > .menu.active {
-  background: #dee2e6;
+#menubar .menu-text:hover {
   font-weight: bold;
-  border-left: 8px solid #0d6efd;
+  background: #e9ecef;
 }
 
 #content-area {
@@ -117,44 +120,39 @@ footer > * {
   height: 100%;
   overflow-y: auto;
 }
-#content-area > .content-wrapper:target {
-  display: block;
-}
 
+/* URL-Hashで要素の表示／非表示／見た目を切り替える */
+#content-area > .content-wrapper:target { display: block; }
+body:has(#welcome:target) .switch-display.welcome { display: block; }
+body:has(#profile:target) .switch-display.profile { display: block; }
+body:has(#nagasamai:target) .switch-display.nagasamai { display: block; }
+body:has(#wakegaku:target) .switch-display.wakegaku { display: block; }
+body:has(#cocorefix:target) .switch-display.cocorefix { display: block; }
+body:has(#minecraft:target) .switch-display.minecraft { display: block; }
+body:has(#welcome:target) .switch-visibility.welcome { visibility: visible; }
+body:has(#profile:target) .switch-visibility.profile { visibility: visible; }
+body:has(#nagasamai:target) .switch-visibility.nagasamai { visibility: visible; }
+body:has(#wakegaku:target) .switch-visibility.wakegaku { visibility: visible; }
+body:has(#cocorefix:target) .switch-visibility.cocorefix { visibility: visible; }
+body:has(#minecraft:target) .switch-visibility.minecraft { visibility: visible; }
+body:has(#welcome:target) .menu-text.welcome { font-weight: bold; background: #dee2e6; }
+body:has(#profile:target) .menu-text.profile { font-weight: bold; background: #dee2e6; }
+body:has(#nagasamai:target) .menu-text.nagasamai { font-weight: bold; background: #dee2e6; }
+body:has(#wakegaku:target) .menu-text.wakegaku { font-weight: bold; background: #dee2e6; }
+body:has(#cocorefix:target) .menu-text.cocorefix { font-weight: bold; background: #dee2e6; }
+body:has(#minecraft:target) .menu-text.minecraft { font-weight: bold; background: #dee2e6; }
+
+/* 画面のサイズによって見た目を切り替える */
 @media (max-width: 768px) {
-	header > #btn_open-menu {
-    display: inline-block;
-  }
-  #menubar {
-    position: fixed;
-    left: -250px;
-    height: 100dvh;
-  }
-  #menubar > #btn_close-menubar {
-    display: block;
-  }
-  #menubar > #menus {
-    margin-top: 40px;
-  }
-  #menubar.open {
-    left: 0;
-    transition: left 0.3s;
-  }
+	#btn_open-menu { display: block; }
+  #btn_close-menubar { display: block; }
+  #menubar { position: fixed; left: -300px; height: 100dvh; }
+  #menus { margin-top: 40px; }
+  #menubar.open { left: 0; }
 }
 @media (min-width: 768px) {
-	header > #btn_open-menu {
-    display: none;
-  }
-  #menubar {
-    position: relative;
-    left: 0;
-    padding-top: 0;
-    transition: none;
-  }
-  #menubar > #btn_close-menubar {
-    display: none;
-  }
-  #menubar > #menus {
-    margin-top: 0;
-  }
+	#btn_open-menu { display: none; }
+  #btn_close-menubar { display: none; }
+  #menubar { position: relative; left: 0; }
+  #menus { margin-top: 0; }
 }
