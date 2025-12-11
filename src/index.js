@@ -8,12 +8,14 @@ function loadHtml() {
   if (hash) {
     const loadMarker = document.querySelector(`.content-wrapper${hash} > a.load-html`);
     if (loadMarker) {
-      const pageUrl = '.' + loadMarker.href.replace(location.origin, '');
+      // const pageUrl = '.' + loadMarker.href.replace(location.origin, '');
+      const pageUrl = loadMarker.href;
       fetch(pageUrl).then(res => res.text()).then(html => {
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, 'text/html');
         const bodyContent = doc.body.innerHTML;
         loadMarker.parentNode.innerHTML = bodyContent;
+        console.log(`loaded: ${pageUrl}`);
       });
     }
   }
