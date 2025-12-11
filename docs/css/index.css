@@ -120,6 +120,9 @@ footer > * {
   height: 100%;
   overflow-y: auto;
 }
+.load-html {
+  color: white;
+}
 
 /* URL-Hashで要素の表示／非表示／見た目を切り替える */
 #content-area > .content-wrapper:target { display: block; }
