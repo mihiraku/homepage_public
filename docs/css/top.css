@@ -163,3 +163,28 @@ body:has(#minecraft:target) .menu-text.minecraft { font-weight: bold; background
   #menubar { position: relative; left: 0; }
   #menus { margin-top: 0; }
 }
+
+#content-area .slides-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+#content-area .slides-content .slide {
+  margin-bottom: 20px;
+  max-height: calc(100dvh - calc(6rem + 40px));
+}
+#content-area .btn_goto-store {
+  margin: 2rem;
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #FFF;
+  background: #fd9535;/*色*/
+  border-radius: 0.5rem;/*角の丸み*/
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+  font-weight: bold;
+  border: solid 2px #d27d00;/*線色*/
+}

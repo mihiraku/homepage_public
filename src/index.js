@@ -46,3 +46,4 @@ window.addEventListener('hashchange', () => {
   const menu = document.getElementById("menubar");
   menubar.classList.remove("open");
 });
+

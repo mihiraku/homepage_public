@@ -1,6 +1,7 @@
 import { gsap } from 'gsap'
+import {} from './slides';
 
-const svg = document.querySelector('#page_wakegaku > object');
+const svg = document.querySelector('#content_wakegaku > object');
 svg.addEventListener('load', () => {
   const doc = svg.getSVGDocument();
   const arrows = doc.querySelector('#background-arrows');
