@@ -1,22 +1,29 @@
+// import './page/wakegaku';
+
 // ハッシュがない場合は初期ページ用のハッシュを与える
 if (!window.location.hash) {
   window.location.hash = 'welcome';
 }
 
 function loadHtml() {
-  const hash = window.location.hash;
+  const hash = window.location.hash.replace(/^#/, '');
   if (hash) {
-    const loadMarker = document.querySelector(`.content-wrapper${hash} > a.load-html`);
+    const loadMarker = document.querySelector(`.content-wrapper#${hash} > a.load-html`);
     if (loadMarker) {
-      // const pageUrl = '.' + loadMarker.href.replace(location.origin, '');
       const pageUrl = loadMarker.href;
-      fetch(pageUrl).then(res => res.text()).then(html => {
+      fetch(pageUrl).then(res => res.text()).then(async html => {
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, 'text/html');
         const bodyContent = doc.body.innerHTML;
         if (loadMarker.parentNode) {
+          // HTML
           loadMarker.parentNode.innerHTML = bodyContent;
-          console.log(`loaded: ${pageUrl}`);
+          console.log('Loaded HTML: ', hash);
+          // Javascript
+          try {
+            await import(`./page/${hash}.js`);
+            console.log('Loaded Javascript: ', hash);
+          } catch (e) {}
         }
       });
     }

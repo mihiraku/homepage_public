@@ -22,3 +22,4 @@ dependencies
   motion                          [React] アニメーションライブラリ。
   use-immer                       [React] 深い変更を検知して再描画させるライブラリ
   react-zoom-pan-pinch            [React] 画像・要素をズームできるようにするライブラリ。
+  gsap                            [SVG] SVGを操作するライブラリ。
