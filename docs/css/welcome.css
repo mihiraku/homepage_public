@@ -37,3 +37,16 @@
   border-top: 1rem solid white;
   margin-left: 2rem; /* 横位置調整 */
 }
+
+#content_welcome .sns {
+  padding-top: 25px;
+}
+
+#content_welcome a {
+  color: black;
+  text-decoration: none;
+}
+
+#content_welcome .sns i {
+  padding: 3px;
+}
