@@ -39,6 +39,7 @@
 }
 
 #content_welcome .sns {
+  text-align: center;
   padding: 25px;
 }
 
@@ -48,5 +49,5 @@
 }
 
 #content_welcome .sns i {
-  padding: 3px;
+  padding: 15px 3px;
 }

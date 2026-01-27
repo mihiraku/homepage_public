@@ -5,5 +5,3 @@ Develop
 		npm run build
 
 task
-	□ 理解・整理
-	□ document.elementFromPoint(x, y)
