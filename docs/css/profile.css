@@ -1,3 +1,7 @@
 #content_profile {
   padding: 20px;
 }
+
+#content_profile img {
+  width: 100px;
+}

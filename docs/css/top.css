@@ -175,6 +175,13 @@ body:has(#minecraft:target) .menu-text.minecraft { font-weight: bold; background
   margin-bottom: 20px;
   max-height: calc(100dvh - calc(6rem + 40px));
 }
+#content-area .center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
 #content-area .btn_goto-store {
   margin: 2rem;
   position: relative;
