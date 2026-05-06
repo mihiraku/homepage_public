@@ -1,7 +1,27 @@
-Develop
-	Command
-		npm run test:unit-watch
-		npm run start
-		npm run build
-
-task
+開発
+	メモ
+		仕組み
+			通常ページと、REACTページ、の両方が作成できるように構成している
+			通常ページ
+				各ページのURLはハッシュ（#nagasamai）の変更によって遷移させている
+				
+			バンドルすると、
+				docsフォルダ内の下記以外が消され、
+					docs/*.html
+					docs/*.js
+					docs/show
+				下記が作成される
+					src/index.js  > docs/main.bundle.js
+					src/show.jsx  > docs/show/show.bundle.js
+			.envファイル内定義をprocess.envによってアクセスできるようにしている？
+	手順
+		開発を行う
+			npm run test:unit-watch
+			npm run start
+			npm run build
+		通常ページを作成する
+			下記を作成する
+				docs/page/[name].html
+				src/page/[name].js
+			ビルドしてからコミットする
+			開発環境はsrc内のjsが読み込まれ、本番環境ではdocs内のsrc_page_[name]_js.jsが読み込まれる

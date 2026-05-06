@@ -1,7 +1,7 @@
 const path = require('path');
-const dotenv = require('dotenv');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const dotenv = require('dotenv');                         // 環境変数読み込みのため
+const webpack = require('webpack');                       // ビルドするため
+const HtmlWebpackPlugin = require('html-webpack-plugin'); // ビルドのプラグイン
 
 // .envファイルの内容をprocess.envに展開する
 dotenv.config();
@@ -12,18 +12,20 @@ module.exports = {
   // 　production:  本番用	最適化・圧縮されて軽量な出力
   mode: 'development',
 
-  // --- bundle.jsの名前とエントリーポイント ---
+  // --- 起点 ---
   entry: {
     main: './src/index.js',   // 通常ページ
     show: './src/show.jsx',   // Showページ
   },
 
-  // --- bundle.jsの出力 ---
+  // --- 出力先 ---
   output: {
     // 出力フォルダ（絶対パスで指定）
     path: path.resolve(__dirname, 'docs'),
 
     // 出力ファイル名
+    //   docs/main.bundle.js
+    //   docs/show/show.bundle.js
     filename: (pathData) => {
       const name = pathData.chunk.name;
       if (name === 'show') {

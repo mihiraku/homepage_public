@@ -133,19 +133,19 @@ footer > * {
 body:has(#welcome:target) .switch-display.welcome { display: block; }
 body:has(#profile:target) .switch-display.profile { display: block; }
 body:has(#nagasamai:target) .switch-display.nagasamai { display: block; }
-body:has(#wakegaku:target) .switch-display.wakegaku { display: block; }
+body:has(#anki:target) .switch-display.anki { display: block; }
 body:has(#cocorefix:target) .switch-display.cocorefix { display: block; }
 body:has(#minecraft:target) .switch-display.minecraft { display: block; }
 body:has(#welcome:target) .switch-visibility.welcome { visibility: visible; }
 body:has(#profile:target) .switch-visibility.profile { visibility: visible; }
 body:has(#nagasamai:target) .switch-visibility.nagasamai { visibility: visible; }
-body:has(#wakegaku:target) .switch-visibility.wakegaku { visibility: visible; }
+body:has(#anki:target) .switch-visibility.anki { visibility: visible; }
 body:has(#cocorefix:target) .switch-visibility.cocorefix { visibility: visible; }
 body:has(#minecraft:target) .switch-visibility.minecraft { visibility: visible; }
 body:has(#welcome:target) .menu-text.welcome { font-weight: bold; background: #dee2e6; }
 body:has(#profile:target) .menu-text.profile { font-weight: bold; background: #dee2e6; }
 body:has(#nagasamai:target) .menu-text.nagasamai { font-weight: bold; background: #dee2e6; }
-body:has(#wakegaku:target) .menu-text.wakegaku { font-weight: bold; background: #dee2e6; }
+body:has(#anki:target) .menu-text.anki { font-weight: bold; background: #dee2e6; }
 body:has(#cocorefix:target) .menu-text.cocorefix { font-weight: bold; background: #dee2e6; }
 body:has(#minecraft:target) .menu-text.minecraft { font-weight: bold; background: #dee2e6; }
 
@@ -175,13 +175,138 @@ body:has(#minecraft:target) .menu-text.minecraft { font-weight: bold; background
   margin-bottom: 20px;
   max-height: calc(100dvh - calc(6rem + 40px));
 }
-#content-area .center-content {
+
+#content-area .content-page-center {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 20px;
 }
+
+#content-area .content-page-center .top-img {
+  margin-bottom: 50px;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+}
+#content-area .content-page-center img {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+}
+#content-area .content-page-center img.no-expand {
+  width: auto;
+}
+#content-area .content-page-center img.small {
+  width: 33%;
+}
+#content-area .content-page-center img.expand {
+  width: 100%;
+  max-width: none;
+}
+
+#content-area .content-page-center .check-list {
+  list-style: none;
+  padding-left: 0;
+}
+#content-area .content-page-center .check-list li {
+  padding-left: 1.5em;
+  text-indent: -1.5em;
+}
+#content-area .content-page-center .check-list li::before {
+  content: "✅ ";
+}
+
+#content-area .content-page-center .separator {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 12px 0;
+}
+
+#content-area .content-page-center .note {
+  font-size: 11px;
+  color: #666;
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+#content-area .content-page-center h2 {
+  color: #333;
+
+}
+#content-area .content-page-center p,ul {
+  max-width: 600px;
+  color: #555;
+}
+#content-area .content-page-center ul {
+  max-width: 550px;
+}
+
+#content-area .content-page-center .card .card-container {
+  margin-bottom: 30px;
+  text-align: center;
+  background: linear-gradient(135deg, #f0f7ff, #fdf3ff);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  max-width: 500px;
+}
+#content-area .content-page-center .card h2 {
+  margin-bottom: 10px;
+  font-size: 30px;
+  color: #333;
+  letter-spacing: 1px;
+}
+#content-area .content-page-center .card p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #555;
+}
+#content-area .content-page-center .card .btn {
+  margin-top: 25px;
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 30px;
+  background: #5c6bc0;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+#content-area .content-page-center .card .btn:hover {
+  background: #3f51b5;
+  transform: translateY(-3px);
+}
+#content-area .content-page-center .paragraph_title {
+  font-size: 28px;
+  font-weight: bold;
+  display: inline-block;
+  position: relative;
+  padding-bottom: 8px;
+}
+/* 下線 */
+#content-area .content-page-center .paragraph_title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  border-radius: 2px;
+
+  /* アニメーション */
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: underline 0.6s ease forwards;
+}
+@keyframes underline {
+  to {
+    transform: scaleX(1);
+  }
+}
+
 #content-area .btn_goto-store {
   margin: 2rem;
   position: relative;

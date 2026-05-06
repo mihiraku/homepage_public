@@ -1,5 +1,3 @@
-// import './page/wakegaku';
-
 // ハッシュがない場合は初期ページ用のハッシュを与える
 if (!window.location.hash) {
   window.location.hash = 'welcome';
