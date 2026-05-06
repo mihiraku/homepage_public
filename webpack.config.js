@@ -39,7 +39,7 @@ module.exports = {
     clean: {
       // フォルダを削除対象から除外する
       // keep: /(page|css|image|svg|webfonts|CNAME)\/.*/,
-      keep: /^(page|css|image|svg|webfonts)\/.*|^CNAME$|^favicon.ico$/,
+      keep: /^(page|css|image|svg|webfonts|pdf)\/.*|^CNAME$|^favicon.ico$/,
     },
   },
 
