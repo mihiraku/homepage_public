@@ -320,3 +320,17 @@ body:has(#minecraft:target) .menu-text.minecraft { font-weight: bold; background
   font-weight: bold;
   border: solid 2px #d27d00;/*線色*/
 }
+
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center; /* 中央寄せ */
+}
+
+.image-grid img {
+  width: 500px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
